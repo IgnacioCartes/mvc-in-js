@@ -1,0 +1,95 @@
+/*
+ * General styling rules
+ */
+html {
+    font-size: 110%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #080D12;
+    font-family: serif;
+    min-height: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding-right: 40px;
+}
+
+.center {
+    text-align: center;
+}
+
+
+
+/*
+ * (very simple) Grid layout
+ */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-33 {
+    width: 33.33%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.col-66 {
+    width: 66.66%;
+    float: left;
+    box-sizing: border-box;
+}
+
+
+
+/*
+ * Styling for album info
+ */
+.album.cover {
+    width: 100%;
+}
+
+.album.title, .album.year {
+    padding-left: 40px;
+}
+
+
+
+/*
+ * Styling for discography list
+ */
+#view-list li {
+    color: #23268F;
+}
+
+#view-list li:hover {
+    cursor: pointer;
+    color: #5760E8;
+}
+
+
+
+/*
+ * Misc
+ */
+hr {
+  margin-top: 3em;
+  margin-bottom: 3.5em;
+  border-width: 0;
+  border-top: 1px solid #DADCE5;
+}
+
+.footer {
+    background-color: #C3C9EF;
+    margin: 100px auto 0 auto; 
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
