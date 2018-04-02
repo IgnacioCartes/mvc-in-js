@@ -3,46 +3,59 @@ var MVCinJS = (function (module) {
 
 
 
+    /*
+     * Model constructor (XMLHttpRequest)
+     *
+     *  Creates a new model
+     */
     var Model = function (XMLHttpRequest) {
         this.XMLHttpRequest = XMLHttpRequest;
-        this.init();
     };
 
-    
-
-    Model.prototype.init = function () {};
 
 
-
+    /*
+     * public getItem (id, callback)
+     *
+     *  Requests a single album, and passes data to a callback function
+     */
     Model.prototype.getItem = function (id, callback) {
         request(
             this.XMLHttpRequest,
-            //'https://api.discogs.com/masters/' + id.toString(),
-            'json-mocks/masters-101417.json',
+            'https://api.discogs.com/masters/' + id.toString(),
+            //'json-mocks/masters-101417.json',
             //'json-mocks/masters-' + id.toString() + '.json',
             function (response) {
                 callback(response);
             }
         );
-        //console.log('https://api.discogs.com/masters/' + id.toString());
     };
 
 
 
+    /*
+     * public getAllItems (callback)
+     *
+     *  Request list of all releases, and passes data to a callback function
+     */
     Model.prototype.getAllItems = function (callback) {
         request(
             this.XMLHttpRequest,
-            //'https://api.discogs.com/artists/291495/releases',
-            'json-mocks/releases.json',
+            'https://api.discogs.com/artists/291495/releases',
+            //'json-mocks/releases.json',
             function (response) {
                 callback(response.releases);
             }
         );
-        //callback(data);
     };
 
 
 
+    /*
+     * private request (HttpRequest, URL, callback)
+     *
+     *  Initializes a XMLHttpRequest to the provided URL, passing data to a callback function
+     */
     function request(HttpRequest, URL, callback) {
         var req = new HttpRequest();
 
@@ -57,62 +70,7 @@ var MVCinJS = (function (module) {
 
 
 
-    var data = [
-        {
-            name: "Paradise Lost",
-            year: 2007,
-            coverURL: "images/ParadiseLost.jpg"
-        },
-        {
-            name: "Underworld",
-            year: 2015,
-            coverURL: "images/Underworld.jpg"
-        },
-        {
-            name: "The Odyssey",
-            year: 2002,
-            coverURL: "images/TheOdyssey.jpg"
-        },
-        {
-            name: "The Divine Wings of Tragedy",
-            year: 1997,
-            coverURL: "images/TheDivineWingsOfTragedy.jpg"
-        },
-        {
-            name: "Iconoclast",
-            year: 2011,
-            coverURL: "images/Iconoclast.jpg"
-        },
-        {
-            name: "V: The New Mythology Suite",
-            year: 2000,
-            coverURL: "images/V.jpg"
-        },
-        {
-            name: "Twilight in Olympus",
-            year: 1998,
-            coverURL: "images/TwilightInOlympus.jpg"
-        },
-        {
-            name: "The Damnation Game",
-            year: 1995,
-            coverURL: "images/TheDamnationGame.jpg"
-        },
-        {
-            name: "Symphony X",
-            year: 1994,
-            coverURL: "images/SymphonyX.jpg"
-        },
-        {
-            name: "Live on the Edge of Forever",
-            year: 2001,
-            coverURL: "images/LiveOnTheEdgeOfForever.jpg"
-        }
-
-    ];
-
-
-
+    // returns Model to the global namespace
     module.Model = Model;
     return module;
 

@@ -1,6 +1,7 @@
 /*
  * General styling rules
  */
+
 html {
     font-size: 110%;
 }
@@ -30,10 +31,11 @@ ul {
 /*
  * (very simple) Grid layout
  */
+
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .col-33 {
@@ -53,11 +55,13 @@ ul {
 /*
  * Styling for album info
  */
+
 .album.cover {
     width: 100%;
 }
 
-.album.title, .album.year {
+.album.title,
+.album.year {
     padding-left: 40px;
 }
 
@@ -66,6 +70,7 @@ ul {
 /*
  * Styling for discography list
  */
+
 #view-list li {
     color: #23268F;
 }
@@ -80,16 +85,17 @@ ul {
 /*
  * Misc
  */
+
 hr {
-  margin-top: 3em;
-  margin-bottom: 3.5em;
-  border-width: 0;
-  border-top: 1px solid #DADCE5;
+    margin-top: 3em;
+    margin-bottom: 3.5em;
+    border-width: 0;
+    border-top: 1px solid #DADCE5;
 }
 
 .footer {
     background-color: #C3C9EF;
-    margin: 100px auto 0 auto; 
+    margin: 100px auto 0 auto;
     padding-top: 60px;
     padding-bottom: 40px;
 }
