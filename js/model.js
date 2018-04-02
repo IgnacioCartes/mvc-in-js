@@ -2,7 +2,13 @@ var MVCinJS = (function (module) {
     'use strict';
 
 
-
+    /*
+     * Discogs Artist ID (Symphony X)
+     */
+    var ARTIST_ID = "291495";
+    
+    
+    
     /*
      * Model constructor (XMLHttpRequest)
      *
@@ -41,7 +47,7 @@ var MVCinJS = (function (module) {
     Model.prototype.getAllItems = function (callback) {
         request(
             this.XMLHttpRequest,
-            'https://api.discogs.com/artists/291495/releases',
+            'https://api.discogs.com/artists/' + ARTIST_ID + '/releases',
             //'json-mocks/releases.json',
             function (response) {
                 callback(response.releases);
